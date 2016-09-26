@@ -1,26 +1,38 @@
-//your code here
+
 void setup()
 {
-	//your code here
+	size(500,500);
+	background(255);
 }
 void draw()
 {
-	//your code here
+	fill(0);
+	ellipse(x, y, 20, 20);
 }
 class NormalParticle
 {
-	//your code here
+	double x, y, speed, angle;
+	x = 200;
+	y = 200;
+	speed = 5;
+	angle = Math.cos(PI) * Speed;
+void move() {
+
+}
+void show() {
+
+	}
 }
 interface Particle
 {
-	//your code here
+
 }
-class OddballParticle //uses an interface
+class OddballParticle 
 {
-	//your code here
+
 }
-class JumboParticle //uses inheritance
+class JumboParticle 
 {
-	//your code here
+
 }
 
