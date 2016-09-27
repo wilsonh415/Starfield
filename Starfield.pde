@@ -1,4 +1,3 @@
-
 void setup()
 {
 	size(500,500);
@@ -6,16 +5,19 @@ void setup()
 }
 void draw()
 {
-	fill(0);
-	ellipse(x, y, 20, 20);
+
 }
 class NormalParticle
 {
-	double x, y, speed, angle;
-	x = 200;
-	y = 200;
-	speed = 5;
-	angle = Math.cos(PI) * Speed;
+	int myX, myY, myColor;
+	double speed, angle;
+	NormalParticle() {
+	myX = 200;
+	myY = 200;
+	myColor = (int)(Math.random()*255);
+	speed = Math.cos(PI) * 5;
+	angle = Math.cos(PI) * speed;
+}
 void move() {
 
 }
