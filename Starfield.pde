@@ -3,7 +3,7 @@ void setup()
 {
 	size(500,500);
 	background(255);
-	swag = new NormalParticle[100];
+	swag = new NormalParticle[200];
 	for(int i=0; i < swag.length; i++) {
 		swag[i] = new NormalParticle();
 	}
@@ -17,8 +17,8 @@ void draw()
 	}
 }
 void mousePressed() {
-	background(255);
 	for(int i=0; i < swag.length; i++) {
+		swag[i] = new NormalParticle();
 		swag[i].move();
 		swag[i].show();
 	}
@@ -37,14 +37,54 @@ class NormalParticle
 	myY3 = Math.random()*5 + 250;
 	speed = Math.cos(2*PI);
 	angle = Math.random()*(Math.PI*2);
+	if(myX > 500) {
+		myX = 250;
 	}
+	}
+
 public void move() {
-myX = Math.cos(angle) * speed/1.5 + myX;
-myY = Math.sin(angle) * speed/1.5 + myY;
-myX2 = Math.cos(angle) * speed/2 + myX2;
-myY2 = Math.sin(angle) * speed/2 + myY2;
-myX3 = Math.cos(angle) * speed/3 + myX3;
-myY3 = Math.sin(angle) * speed/3 + myY3;
+myX = Math.cos(angle) * speed + myX;
+myY = Math.sin(angle) * speed + myY;
+myX2 = Math.cos(angle) * speed/1.3 + myX2;
+myY2 = Math.sin(angle) * speed/1.3 + myY2;
+myX3 = Math.cos(angle) * speed/2 + myX3;
+myY3 = Math.sin(angle) * speed/2 + myY3;
+	if(myX > 500) {
+		myX = 250;
+	}
+	if(myX < 0) {
+		myX = 250;
+	}
+	if(myY > 500) {
+		myY = 250;
+	}
+	if(myY < 0) {
+		myY = 250;
+	}
+	if(myX2 > 500) {
+		myX2 = 250;
+	}
+	if(myX2 < 0) {
+		myX2 = 250;
+	}
+	if(myY2 > 500) {
+		myY2 = 250;
+	}
+	if(myY2 < 0) {
+		myY2 = 250;
+	}
+	if(myX3 > 500) {
+		myX3 = 250;
+	}
+	if(myX3 < 0) {
+		myX3 = 250;
+	}
+	if(myY3 > 500) {
+		myY3 = 250;
+	}
+	if(myY3 < 0) {
+		myY3 = 250;
+	}
  }
 public void show() {
 	fill(0,myColor,0);
@@ -57,11 +97,15 @@ public void show() {
 }
 interface Particle
 {
-
 }
 class OddballParticle 
 {
+public void move() {
 
+ }
+public void show() {
+
+}
 }
 class JumboParticle 
 {
