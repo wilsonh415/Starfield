@@ -2,7 +2,7 @@ Particle[] swag;
 void setup()
 {
 	size(700,700);
-	background(255);
+	background(0);
 	swag = new Particle[200];
 	swag[0] = new JumboParticle();
 	swag[1] = new JumboParticle();
@@ -14,7 +14,7 @@ void setup()
 }
 void draw()
 {
-	background(255);
+	background(0);
 	for(int i=0; i < swag.length; i++) {
 		swag[i].move();
 		swag[i].show();
@@ -115,8 +115,8 @@ OddballParticle() {
 	ecolor = (int)(Math.random()*255);
 	}
 public void move() {
-apos = Math.cos(dangle) * cspeed + apos;
-bpos = Math.sin(dangle) * cspeed + bpos;
+apos = Math.cos(dangle) * cspeed + apos + 10;
+bpos = Math.sin(dangle) * cspeed + bpos + 10;
 	if(apos > 700) {
 		apos = 350;
 	}
@@ -131,18 +131,18 @@ bpos = Math.sin(dangle) * cspeed + bpos;
 	}
  }
 public void show() {
-	fill((int)ecolor);
-	ellipse((int)apos,(int)bpos, 30, 30);
+	fill(125);
+	ellipse((int)apos,(int)bpos, 60, 60);
 }
 }
 class JumboParticle extends NormalParticle {
 	public void show() 
 {
-	fill(0,myColor,0);
+	fill(255);
 	rect((int)myX, (int)myY, 15, 15);
-	fill(myColor, 0, 0);
+	fill(255);
 	rect((int)myX2,(int)myY2, 15, 15);
-	fill(0,0,myColor);
+	fill(255);
 	rect((int)myX3, (int)myY3, 15, 15);
 }
 }
