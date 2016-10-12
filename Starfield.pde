@@ -21,11 +21,6 @@ void draw()
 	}
 }
 void mousePressed() {
-	for(int i=0; i < swag.length; i++) {
-
-		swag[i].move();
-		swag[i].show();
-	}
 }
 class NormalParticle implements Particle
 {
@@ -47,6 +42,7 @@ class NormalParticle implements Particle
 	}
 
 public void move() {
+
 myX = Math.cos(angle) * speed + myX;
 myY = Math.sin(angle) * speed + myY;
 myX2 = Math.cos(angle) * speed/1.3 + myX2;
@@ -87,6 +83,14 @@ myY3 = Math.sin(angle) * speed/2 + myY3;
 		myY3 = 350;
 	}
 	if(myY3 < 0) {
+		myY3 = 350;
+	}
+	if(mousePressed) {
+		myX = 350;
+		myY = 350;
+		myX2 = 350;
+		myY2 = 350;
+		myX3 = 350;
 		myY3 = 350;
 	}
  }
